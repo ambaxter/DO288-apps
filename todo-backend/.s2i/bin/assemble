@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Performing S2I Build"
+
+#TODO add S2I call
+/usr/libexec/s2i/assemble
+
+
+rc=$?
+
+if [ $rc -eq 0 ]; then 
+    echo "Recording successful build of life cycle management system"
+else
+    echo "Not calling the life cycle management system. S2I Build failed."
+fi
+exit $rc
